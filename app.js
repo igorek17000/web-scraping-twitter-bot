@@ -35,10 +35,10 @@ async function runApp() {
     await scrapeBuy('https://p2p.binance.com/en/trade/all-payments/USDT?fiat=LKR')
     await scrapeSell('https://p2p.binance.com/en/trade/sell/USDT?fiat=LKR&payment=ALL')
     var client = new Twitter({
-        consumer_key: 'YSL7TKjbOIdrfWTlco1SzbbEX',
-        consumer_secret: 'e6iwmnSEwMJMeevp3WwcDL3Uogzbe1ah8nVRrkafeMxtev1OeT',
-        access_token_key: '1186569178247024641-BCv8KSTFr3f1wJTC7QnCREZNZn1d22',
-        access_token_secret: 'Dgxb3ObE1IYtAF6NiN3f5VwBsoizqrPVPnZH5dghRNGo5'
+        consumer_key: process.env.TWITTER_CONSUMER_KEY,
+        consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+        access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+        access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
     });
 
     client.post('statuses/update', { status: '#USDtether to #LKR RATE on #Binance P2P Market \n\n - Buying : '+ buyRate + ' LKR' + '\n - Selling : ' + sellRate + ' LKR'},

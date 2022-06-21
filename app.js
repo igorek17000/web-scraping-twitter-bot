@@ -44,7 +44,7 @@ async function runApp() {
         consumer_key,
         consumer_secret,
         access_token_key,
-        access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+        access_token_secret
     });
 
     client.post('statuses/update', { status: '#USDtether to #LKR RATE on #Binance P2P Market \n\n - Buying : '+ buyRate + ' LKR' + '\n - Selling : ' + sellRate + ' LKR'},

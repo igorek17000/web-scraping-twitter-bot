@@ -34,10 +34,16 @@ async function scrapeSell(url) {
 async function runApp() {
     await scrapeBuy('https://p2p.binance.com/en/trade/all-payments/USDT?fiat=LKR')
     await scrapeSell('https://p2p.binance.com/en/trade/sell/USDT?fiat=LKR&payment=ALL')
+    
+    const consumer_key = process.env.CONSUMER_API_KEY
+    const consumer_secret = process.env.CONSUMER_API_SECRET_KEY
+    const access_token_key = process.env.ACCESS_TOKEN
+    const access_token_secret = process.env.ACCESS_TOKEN_SECRET
+    
     var client = new Twitter({
-        consumer_key: process.env.TWITTER_CONSUMER_KEY,
-        consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-        access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+        consumer_key,
+        consumer_secret,
+        access_token_key,
         access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
     });
 

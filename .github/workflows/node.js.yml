@@ -27,6 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
       env:
+        CI: true
         CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
         CONSUMER_API_SECRET_KEY: ${{ secrets.TWITTER_CONSUMER_API_SECRET_KEY }}
         ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
